@@ -19,16 +19,22 @@ function M.config()
   local set = vim.keymap.set
 
   set("n", "<Leader>ff", builtin.find_files, {desc="[f]ind [f]iles"})
-  set("n", "<Leader>sc", function()
+  set("n", "<Leader>fg", builtin.live_grep, {desc="[[gr]ep [a]ll files"})
+  set("n", "<Leader>sb", builtin.current_buffer_fuzzy_find, {desc="[s]earch [b]uffer"})
+  -- set("n", "<Leader>fgo", builtin.live_grep, {desc="[[gr]ep [o]pen files"})
+  -- set("n", "<Leader>sb", builtin.live_grep({grep_open_files=true}))
+  set("n", "<Leader>cf", function()
     builtin.find_files({cwd = vim.fn.stdpath("config")})
   end
   , {desc="[s]earch neovim [c]onfig"})
-  set("n", "<Leader>gr", builtin.live_grep, {desc="[[gr]ep files"})
-  -- set("n", "<Leader>sb", builtin.live_grep({grep_open_files=true}))
-  set("n", "<Leader>gc", function()
+  set("n", "<Leader>cg", function()
     builtin.live_grep({cwd = vim.fn.stdpath("config"), glob_pattern="**/*.lua"})
   end
   , {desc="[g]rep neovim [c]onfig"})
+
+  set("n", "<Leader>fr", builtin.lsp_document_symbols, {desc="[f]ind [r]eferences"})
+  set("n", "<Leader>fd", builtin.lsp_definitions, {desc="[f]ind [d]efinitions"})
+  
 
 end
 

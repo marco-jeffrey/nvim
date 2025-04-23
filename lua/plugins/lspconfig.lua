@@ -18,7 +18,7 @@ local function lsp_keymaps(bufnr)
   local opts = {noremap = true, silent = true }
   local set = vim.api.nvim_buf_set_keymap
   set(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  set(bufnr, "n", "]]", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
+  set(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references(nil)<cr>", opts)
 end
 
 

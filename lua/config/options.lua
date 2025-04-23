@@ -2,7 +2,7 @@ local opt = vim.opt
 -- main options
 opt.number = true
 opt.relativenumber = true
-opt.scrolloff = 10
+opt.scrolloff = 8
 opt.sidescrolloff = 10
 
 -- colorscheme
